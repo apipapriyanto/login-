@@ -29,18 +29,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function articles()
+    public function profile()
     {
-      return $this->hasMany('App\Article');
-    }
-
-    public function address ()
-    {
-      return $this->hasOne('App\Addresse');
-    }
-
-    public function roles()
-    {
-      return $this->belongsToMany('App\Role');
+      return $this->hasOne(Profile::class);
     }
 }
