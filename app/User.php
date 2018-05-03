@@ -29,18 +29,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function articles()
+    // Method One To Many Uers -> Post
+    public function posts()
     {
-      return $this->hasMany('App\Article');
+      return $this->hasMany(Post::class);
     }
 
-    public function address ()
-    {
-      return $this->hasOne('App\Addresse');
-    }
-
-    public function roles()
-    {
-      return $this->belongsToMany('App\Role');
-    }
 }
